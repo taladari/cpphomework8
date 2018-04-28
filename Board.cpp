@@ -4,11 +4,12 @@
 
 // i = row * boardSize + col
 
-Board::Board(int boardSize)
+Board::Board(int boardSize) : _boardSize(boardSize), _board(boardSize*boardSize, { '.' })
 {
-	this->_boardSize = boardSize;
-	vector<Board_Node> temp(boardSize*boardSize, { '.' });
-	_board = temp;
+}
+
+Board::Board(const Board & other) : _board(other._board), _boardSize (other._boardSize)
+{
 }
 
 Board_Node Board::operator[](Board_Node index) const

@@ -1,9 +1,7 @@
 #include "IllegalCoordinateException.h"
 
-IllegalCoordinateException::IllegalCoordinateException(size_t i, size_t j)
+IllegalCoordinateException::IllegalCoordinateException(size_t i, size_t j) : i(i), j(j)
 {
-	this->i = i;
-	this->j = j;
 }
 
 string IllegalCoordinateException::theCoordinate() const

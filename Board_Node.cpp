@@ -6,10 +6,8 @@ Board_Node::Board_Node(char token)
 	this->token = token;
 }
 
-Board_Node::Board_Node(size_t i, size_t j)
+Board_Node::Board_Node(size_t i, size_t j) : i(i), j(j)
 {
-	this->i = i;
-	this->j = j;
 }
 
 Board_Node & Board_Node::operator=(char token)

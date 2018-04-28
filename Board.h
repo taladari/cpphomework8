@@ -17,6 +17,7 @@ class Board
 {
 public:
 	Board(int boardSize);
+	Board(const Board &other);
 	friend ostream& operator<<(ostream& os, const Board& board);
 	Board_Node operator[](Board_Node index) const;
 	Board_Node& operator[](Board_Node index);

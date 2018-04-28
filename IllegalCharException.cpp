@@ -1,8 +1,7 @@
 #include "IllegalCharException.h"
 
-IllegalCharException::IllegalCharException(char token)
+IllegalCharException::IllegalCharException(char token) : token(token)
 {
-	this->token = token;
 }
 
 char IllegalCharException::theChar() const
