@@ -2,7 +2,6 @@
 #include "IllegalCharException.h"
 #include "IllegalCoordinateException.h"
 
-// i = row * boardSize + col
 
 Board::Board(int boardSize) : _boardSize(boardSize), _board(boardSize*boardSize, { '.' })
 {
@@ -38,7 +37,7 @@ Board & Board::operator=(char token)
 	{
 		throw IllegalCharException(token);
 	}
-	for (size_t i = 0; i < _boardSize * _boardSize; i++)
+	for (size_t i = 0; i < _board.size(); i++)
 	{
 		_board[i].token = '.';
 	}
@@ -46,7 +45,7 @@ Board & Board::operator=(char token)
 
 ostream & operator<<(ostream & os, const Board & board)
 {
-	for (size_t i = 0; i < board._boardSize*board._boardSize; i++)
+	for (size_t i = 0; i < board._board.size(); i++)
 	{
 		if (i != 0 && i % board._boardSize == 0)
 		{

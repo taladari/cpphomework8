@@ -1,9 +1,8 @@
 #include "Board_Node.h"
 #include "IllegalCharException.h"
 
-Board_Node::Board_Node(char token)
+Board_Node::Board_Node(char token) : token(token)
 {
-	this->token = token;
 }
 
 Board_Node::Board_Node(size_t i, size_t j) : i(i), j(j)
