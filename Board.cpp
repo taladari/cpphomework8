@@ -38,6 +38,7 @@ Board & Board::operator=(const char token)
 	{
 		_board[i] = '.';
 	}
+	return *this;
 }
 
 ostream & operator<<(ostream & os, Board const & board)
