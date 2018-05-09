@@ -4,6 +4,8 @@ CFLAGS = -Wall -g
 all.out:main.o Board.o Coordinate.o IllegalCoordinateException.o IllegalCharException.o Token.o CharWrapper.o 
 	$(CC) $(CFLAGS) -o all main.o Board.o Coordinate.o IllegalCoordinateException.o IllegalCharException.o Token.o CharWrapper.o -o all.out 
 	
+main.o: main.cpp
+	$(CC) $(CFLAGS) -c main.cpp
 
 Board.o: Board.cpp Board.h
 	$(CC) $(CFLAGS) -c Board.cpp
