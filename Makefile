@@ -3,7 +3,6 @@ CXXFLAGS=-std=c++17
 
 all: Board.o Coordinate.o IllegalCoordinateException.o IllegalCharException.o Token.o CharWrapper.o
 	
-
 Board.o: 
 	$(CXX) $(CXXFLAGS) -c Board.cpp -o Board.o
 	
