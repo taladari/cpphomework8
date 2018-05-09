@@ -1,6 +1,9 @@
 CXX=clang++-5.0
 CPPFLAGS=-std=c++17 
 
+%.o:%.c
+    gcc $(CFLAGS) $< -o $@
+
 all: Board.o Coordinate.o IllegalCoordinateException.o IllegalCharException.o Token.o CharWrapper.o
 
 Board.o: Board.cpp Board.h
