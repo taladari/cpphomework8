@@ -21,7 +21,7 @@ Board::Board(const Board & other) : _board(other._board), _boardSize(other._boar
 //	return _board[index.i * _boardSize + index.j].getToken();
 //}
 
-Token & Board::operator[](Coordinate index)
+Token & Board::operator[](const Coordinate index)
 {
 	int boardIndex = index.i * _boardSize + index.j;
 	if (boardIndex < 0 || boardIndex >= _board.size())
@@ -31,7 +31,7 @@ Token & Board::operator[](Coordinate index)
 	return _board[index.i * _boardSize + index.j];
 }
 
-Board & Board::operator=(char token)
+Board & Board::operator=(const char token)
 {
 	if (token != '.')
 	{

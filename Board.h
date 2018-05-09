@@ -14,8 +14,8 @@ public:
 	Board(const Board &other);
 	friend ostream& operator<<(ostream& os, const Board& board);
 	//char operator[](Coordinate index) const;
-	Token& operator[](Coordinate index);
-	Board & operator=(char token);
+	Token& operator[](const Coordinate index);
+	Board & operator=(const char token);
 
 private:
 	int _boardSize;
