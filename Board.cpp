@@ -1,7 +1,4 @@
 #include "Board.h"
-#include "IllegalCharException.h"
-#include "IllegalCoordinateException.h"
-
 
 Board::Board(int boardSize) : _boardSize(boardSize), _board(boardSize*boardSize, { '.' })
 {

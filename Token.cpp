@@ -1,5 +1,4 @@
 #include "Token.h"
-#include "IllegalCharException.h"
 
 
 Token::Token(char tok) {

@@ -1,9 +1,4 @@
 #include "Board.h"
-#include "IllegalCharException.h"
-#include "IllegalCoordinateException.h"
-
-#include <iostream>
-using namespace std;
 
 int main() {
 

@@ -4,6 +4,8 @@
 #include <vector>
 #include "Coordinate.h"
 #include "Token.h"
+#include "IllegalCharException.h"
+#include "IllegalCoordinateException.h"
 
 using namespace std;
 

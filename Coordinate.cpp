@@ -1,8 +1,5 @@
 #include "Coordinate.h"
-#include "IllegalCharException.h"
 
-#include <iostream>
-using namespace std;
 
 //Coordinate::Coordinate(char token) : token(token)
 //{

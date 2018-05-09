@@ -1,5 +1,6 @@
 #pragma once  
 
+#include "IllegalCharException.h"
 #include "CharWrapper.h"
 
 #include <iostream>

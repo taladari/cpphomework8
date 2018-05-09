@@ -1,5 +1,7 @@
 #pragma once
 
+#include "IllegalCharException.h"
+
 #include <iostream>
 using namespace std;
 
