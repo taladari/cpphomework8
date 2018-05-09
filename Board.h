@@ -2,16 +2,10 @@
 
 #include <iostream>
 #include <vector>
-#include "Board_Node.h"
+#include "Coordinate.h"
+#include "Token.h"
 
 using namespace std;
-
-
-struct boardIndex
-{
-	size_t i, j;
-};
-
 
 class Board
 {
@@ -19,11 +13,34 @@ public:
 	Board(int boardSize);
 	Board(const Board &other);
 	friend ostream& operator<<(ostream& os, const Board& board);
-	Board_Node operator[](Board_Node index) const;
-	Board_Node& operator[](Board_Node index);
+	//char operator[](Coordinate index) const;
+	Token& operator[](Coordinate index);
 	Board & operator=(char token);
 
 private:
 	int _boardSize;
-	vector<Board_Node> _board;
+	vector<Token> _board;
 };
+
+
+//template<typename T> class Wrapper
+//{
+//	T Object;
+//public:
+//	operator T&() { return Object; };
+//};
+//
+//class Class : public Wrapper<char>
+//{
+//public:
+//	char token;
+//	Class& operator =(char ch) {
+//		if (ch != 'O') {
+//			cout << "WRONG" << endl;
+//			return *this;
+//		}
+//		token = ch;
+//		return *this;
+//	}
+//	
+//};

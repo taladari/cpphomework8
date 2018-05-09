@@ -2,6 +2,7 @@
 
 IllegalCoordinateException::IllegalCoordinateException(size_t i, size_t j) : i(i), j(j)
 {
+
 }
 
 string IllegalCoordinateException::theCoordinate() const

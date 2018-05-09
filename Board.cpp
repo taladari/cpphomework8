@@ -7,21 +7,21 @@ Board::Board(int boardSize) : _boardSize(boardSize), _board(boardSize*boardSize,
 {
 }
 
-Board::Board(const Board & other) : _board(other._board), _boardSize (other._boardSize)
+Board::Board(const Board & other) : _board(other._board), _boardSize(other._boardSize)
 {
 }
 
-Board_Node Board::operator[](Board_Node index) const
-{
-	int boardIndex = index.i * _boardSize + index.j;
-	if (boardIndex < 0 || boardIndex >= _board.size())
-	{
-		throw IllegalCoordinateException(index.i, index.j);
-	}
-	return _board[index.i * _boardSize + index.j];
-}
+//char Board::operator[](Coordinate index) const
+//{
+//	int boardIndex = index.i * _boardSize + index.j;
+//	if (boardIndex < 0 || boardIndex >= _board.size())
+//	{
+//		throw IllegalCoordinateException(index.i, index.j);
+//	}
+//	return _board[index.i * _boardSize + index.j].getToken();
+//}
 
-Board_Node & Board::operator[](Board_Node index)
+Token & Board::operator[](Coordinate index)
 {
 	int boardIndex = index.i * _boardSize + index.j;
 	if (boardIndex < 0 || boardIndex >= _board.size())
@@ -39,7 +39,7 @@ Board & Board::operator=(char token)
 	}
 	for (size_t i = 0; i < _board.size(); i++)
 	{
-		_board[i].token = '.';
+		_board[i] = '.';
 	}
 }
 
@@ -51,7 +51,7 @@ ostream & operator<<(ostream & os, const Board & board)
 		{
 			os << endl;
 		}
-		os << board._board[i].token;
+		os << board._board[i]._tok;
 	}
 	return os;
 }
