@@ -22,4 +22,4 @@ IllegalCharException.o:
 	$(CXX) $(CXXFLAGS) -c IllegalCharException.cpp -o IllegalCharException.o
 	
 clean:
-rm *.o a.out
+	rm *.o a.out
