@@ -51,5 +51,5 @@ ostream & operator<<(ostream & os, Board const & board)
 		}
 		os << board._board[i]._tok;
 	}
-	return os;
+	return os << endl;
 }
