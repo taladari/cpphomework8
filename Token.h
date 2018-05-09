@@ -11,6 +11,7 @@ public:
 	Token(char tok);
 	Token& operator=(char token);
 	friend ostream& operator<<(ostream& os, const Token& tok);
+	bool operator ==(char other);
 
 private:
 	

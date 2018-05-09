@@ -21,3 +21,7 @@ ostream& operator<<(ostream& os, const Token& tok) {
 	os << tok._tok;
 	return os;
 }
+
+bool Token::operator==(char other) {
+	return other == this->_tok || other == this->Object;
+}
