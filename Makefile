@@ -1,8 +1,6 @@
 CXX=clang++-5.0
 CPPFLAGS=-std=c++17 
 
-%.o:%.c
-    gcc $(CFLAGS) $< -o $@
 
 all: Board.o Coordinate.o IllegalCoordinateException.o IllegalCharException.o Token.o CharWrapper.o
 
@@ -23,3 +21,7 @@ Board.o: Token.cpp Token.h
 	
 Board.o: CharWrapper.cpp CharWrapper.h
 	$(CXX) $(CPPFLAGS) --compile CharWrapper.cpp -o CharWrapper.o
+	
+clean:
+	
+	rm *.exe all.out *.class
