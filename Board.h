@@ -12,7 +12,7 @@ class Board
 public:
 	Board(int boardSize);
 	Board(const Board &other);
-	friend ostream& operator<<(ostream& os, const Board& board);
+	friend ostream& operator<<(ostream& os,  Board const& board);
 	//char operator[](Coordinate index) const;
 	Token& operator[](const Coordinate index);
 	Board & operator=(const char token);

@@ -43,7 +43,7 @@ Board & Board::operator=(const char token)
 	}
 }
 
-ostream & operator<<(ostream & os, const Board & board)
+ostream & operator<<(ostream & os, Board const & board)
 {
 	for (size_t i = 0; i < board._board.size(); i++)
 	{
