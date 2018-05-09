@@ -1,8 +1,8 @@
 CC =g++
 CFLAGS = -Wall -g
 
-all.out:Board.o Coordinate.o IllegalCoordinateException.o IllegalCharException.o Token.o CharWrapper.o 
-	$(CC) $(CFLAGS) -o all Board.o Coordinate.o IllegalCoordinateException.o IllegalCharException.o Token.o CharWrapper.o -o all.out 
+all.out:main.o Board.o Coordinate.o IllegalCoordinateException.o IllegalCharException.o Token.o CharWrapper.o 
+	$(CC) $(CFLAGS) -o all main.o Board.o Coordinate.o IllegalCoordinateException.o IllegalCharException.o Token.o CharWrapper.o -o all.out 
 	
 
 Board.o: Board.cpp Board.h
