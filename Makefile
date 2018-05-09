@@ -1,27 +1,28 @@
-CXX=clang++-5.0
-CPPFLAGS=-std=c++17 
+CC =g++
+CFLAGS = -Wall -g
 
-
-all: Board.o Coordinate.o IllegalCoordinateException.o IllegalCharException.o Token.o CharWrapper.o
+all.out:Board.o Coordinate.o IllegalCoordinateException.o IllegalCharException.o Token.o CharWrapper.o 
+	$(CC) $(CFLAGS) -o all Board.o Coordinate.o IllegalCoordinateException.o IllegalCharException.o Token.o CharWrapper.o -o all.out 
+	
 
 Board.o: Board.cpp Board.h
-	$(CXX) $(CPPFLAGS) --compile Board.cpp -o Board.o
+	$(CC) $(CFLAGS) -c Board.cpp
+
+Coordinate.o: Coordinate.cpp Coordinate.h
+	$(CC) $(CFLAGS) -c Coordinate.cpp 
+
+Token.o: Token.cpp Token.h
+	$(CC) $(CFLAGS) -c Token.cpp
+
+CharWrapper.o: CharWrapper.cpp CharWrapper.h
+	$(CC) $(CFLAGS) -c CharWrapper.cpp
 	
-Board.o: Coordinate.cpp Coordinate.h
-	$(CXX) $(CPPFLAGS) --compile Coordinate.cpp -o Coordinate.o
-	
-Board.o: IllegalCoordinateException.cpp IllegalCoordinateException.h
-	$(CXX) $(CPPFLAGS) --compile IllegalCoordinateException.cpp -o IllegalCoordinateException.o
-	
-Board.o: IllegalCharException.cpp IllegalCharException.h
-	$(CXX) $(CPPFLAGS) --compile IllegalCharException.cpp -o IllegalCharException.o
-	
-Board.o: Token.cpp Token.h
-	$(CXX) $(CPPFLAGS) --compile Token.cpp -o Token.o
-	
-Board.o: CharWrapper.cpp CharWrapper.h
-	$(CXX) $(CPPFLAGS) --compile CharWrapper.cpp -o CharWrapper.o
+IllegalCoordinateException.o: IllegalCoordinateException.cpp IllegalCoordinateException.h
+	$(CC) $(CFLAGS) -c IllegalCoordinateException.cpp
+
+IllegalCharException.o: IllegalCharException.cpp IllegalCharException.h
+	$(CC) $(CFLAGS) -c IllegalCharException.cpp
 	
 clean:
 	
-	rm *.exe all.out *.class
+		rm *.o all.out
