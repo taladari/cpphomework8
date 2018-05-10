@@ -18,7 +18,17 @@ Board::Board(const Board & other) : _board(other._board), _boardSize(other._boar
 //	return _board[index.i * _boardSize + index.j].getToken();
 //}
 
-Token & Board::operator[](const Coordinate index)
+Token & Board::operator[](const Coordinate index) 
+{
+	int boardIndex = index.i * _boardSize + index.j;
+	if (boardIndex < 0 || boardIndex >= _board.size())
+	{
+		throw IllegalCoordinateException(index.i, index.j);
+	}
+	return _board[index.i * _boardSize + index.j];
+}
+
+const Token Board::operator[](const Coordinate index) const
 {
 	int boardIndex = index.i * _boardSize + index.j;
 	if (boardIndex < 0 || boardIndex >= _board.size())
@@ -39,6 +49,11 @@ Board & Board::operator=(const char token)
 		_board[i] = '.';
 	}
 	return *this;
+}
+
+const int Board::size() const
+{
+	return _boardSize;
 }
 
 ostream & operator<<(ostream & os, Board const & board)
