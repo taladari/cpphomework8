@@ -18,16 +18,19 @@ void TicTacToe::play(Player & p1, Player & p2)
 		{
 			_gameWinner = currPlayer == &p1 ? &p2 : &p1;
 			gameOver = true;
+			continue;
 		}
 		if (isWinner(*currPlayer))
 		{
 			_gameWinner = currPlayer;
 			gameOver = true;
+			continue;
 		}
 		else if (isBoardFull())
 		{
 			_gameWinner = &p1;
 			gameOver = true;
+			continue;
 		}
 		currPlayer = currPlayer == &p1 ? &p2 : &p1;
 	}
