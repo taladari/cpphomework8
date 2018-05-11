@@ -12,6 +12,7 @@ using namespace std;
 class Board
 {
 public:
+	Board() {};
 	Board(int boardSize);
 	Board(const Board &other);
 	friend ostream& operator<<(ostream& os,  Board const& board);
