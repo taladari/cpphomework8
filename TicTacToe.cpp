@@ -112,7 +112,7 @@ bool TicTacToe::isWinner(Player & player)
 					{
 						for (size_t k = 1; k < size; k++)
 						{
-							if (_gameBoard[{i + 1, j + 1}]._tok != curr)
+							if (_gameBoard[{i + k, j + k}]._tok != curr)
 							{
 								hasWon = false;
 								break;
@@ -122,11 +122,11 @@ bool TicTacToe::isWinner(Player & player)
 							return true;
 					}
 					hasWon = true;
-					if (j == _gameBoard.size() - 1) // look down left
+					if (j == size - 1) // look down left
 					{
 						for (size_t k = 1; k < size; k++)
 						{
-							if (_gameBoard[{i + 1, j - 1}]._tok != curr)
+							if (_gameBoard[{i + k, j - k}]._tok != curr)
 							{
 								hasWon = false;
 								break;
