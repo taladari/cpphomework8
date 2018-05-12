@@ -28,7 +28,7 @@ void TicTacToe::play(Player & p1, Player & p2)
 		}
 		else if (isBoardFull())
 		{
-			_gameWinner = &p1;
+			_gameWinner = &p2;
 			gameOver = true;
 			continue;
 		}
