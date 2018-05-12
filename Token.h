@@ -13,6 +13,7 @@ public:
 	Token& operator=(char token);
 	friend ostream& operator<<(ostream& os, const Token& tok);
 	bool operator ==(char other) const;
+	bool operator !=(char other) const;
 
 private:
 	

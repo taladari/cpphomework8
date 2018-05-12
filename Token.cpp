@@ -16,6 +16,11 @@ Token& Token::operator=(char token) {
 	return *this;
 }
 
+bool Token::operator!=(char other) const
+{
+	return other != this->_tok && other != this->Object;
+}
+
 ostream& operator<<(ostream& os, const Token& tok) {
 	os << tok._tok;
 	return os;
