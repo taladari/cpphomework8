@@ -68,3 +68,24 @@ ostream & operator<<(ostream & os, Board const & board)
 	}
 	return os << endl;
 }
+
+istream & operator >> (istream & input, Board & board)
+{
+	string fileName;
+	char curr;
+	vector<Token> tokens;
+	getline(input, fileName);
+
+	ifstream file(fileName);
+
+	while (file.get(curr))
+	{
+		Token t(curr);
+		tokens.push_back(t);
+	}
+	board = Board(tokens);
+
+	file.close();
+
+	return input;
+}
