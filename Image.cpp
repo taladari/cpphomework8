@@ -1,6 +1,6 @@
 #include "Image.h"
 
-Image::Image(int dim, string fileName) : dim(dim)
+Image::Image(int dim) : dim(dim)
 {
 	colors = new RGB[dim*dim];
 }
@@ -24,7 +24,7 @@ string Image::createPPM(vector<Token> board, int boardSize)
 				drawO(i, j, cellSize);
 			}
 			else {
-				drawTable(i, j, cellSize);
+				drawBlank(i, j, cellSize);
 			}
 		}
 	}
@@ -52,7 +52,7 @@ void Image::drawX(int row, int col, int cellSize)
 	}
 }
 
-void Image::drawTable(int row, int col, int cellSize)
+void Image::drawBlank(int row, int col, int cellSize)
 {
 	int currRow = row*cellSize;
 	int currCol = col*cellSize;

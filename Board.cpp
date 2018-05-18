@@ -86,6 +86,6 @@ istream & operator >> (istream & input, Board & board)
 
 string Board::draw(int pixels)
 {
-	Image ppm(pixels, "tal.ppm");
+	Image ppm(pixels);
 	return ppm.createPPM(_board, _boardSize);
 }

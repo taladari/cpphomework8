@@ -25,10 +25,10 @@ private:
 	RGB* colors;
 	void drawX(int row, int col, int cellSize);
 	void drawO(int row, int col, int cellSize);
-	void drawTable(int row, int col, int cellSize);
+	void drawBlank(int row, int col, int cellSize);
 	void savePPMFile(string fName);
 
 public:
-	Image(int dim, string fileName);
+	Image(int dim);
 	string createPPM(vector<Token> board, int boardSize);
 };
