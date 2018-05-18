@@ -40,7 +40,8 @@ void Image::drawX(int row, int col, int cellSize)
 	for (int i = 0; i < cellSize; i++) {
 		currCol = col*cellSize;
 		for (int j = 0; j < cellSize; j++) {
-			if (((i == j || i + j == cellSize) && i > 20 && i < cellSize - 20 && j > 20 && j < cellSize -20) || i % (cellSize - 1) == 0 || j % (cellSize - 1) == 0)
+			if (((i == j || i + j == cellSize) && i > 20 && i < cellSize - 20 && j > 20 && j < cellSize -20) 
+				|| i % (cellSize - 1) == 0 || j % (cellSize - 1) == 0)
 			{
 				colors[currRow*dim + currCol].red = 0;
 				colors[currRow*dim + currCol].green = 0;
