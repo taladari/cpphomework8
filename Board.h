@@ -3,6 +3,7 @@
 #include <iostream>
 #include <fstream>
 #include <vector>
+#include <math.h>
 #include "Coordinate.h"
 #include "Token.h"
 #include "IllegalCharException.h"
