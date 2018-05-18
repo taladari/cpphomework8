@@ -26,7 +26,7 @@ int main() {
 	Board board;
 	cin >> board;
 	cout << board;
-
+	board.draw(600);
 
 	//TicTacToe game(4);       // Initializes a game on a 4x4 board
 	//XYPlayer player1;

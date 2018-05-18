@@ -7,6 +7,7 @@
 #include "Token.h"
 #include "IllegalCharException.h"
 #include "IllegalCoordinateException.h"
+#include "Image.h"
 
 using namespace std;
 
@@ -23,6 +24,7 @@ public:
 	Board & operator=(const char token);
 	const int size() const;
 	friend istream &operator >> (istream  &input, Board &board);
+	void draw(int pixels);
 
 private:
 	int _boardSize;

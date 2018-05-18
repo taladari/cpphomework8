@@ -81,11 +81,21 @@ istream & operator >> (istream & input, Board & board)
 	while (file.get(curr))
 	{
 		Token t(curr);
-		tokens.push_back(t);
+		if (t == 'X' || t == 'O' || t == '.')
+		{
+			tokens.push_back(t);
+		}
 	}
 	board = Board(tokens);
-
+	board._boardSize = (int)sqrt(tokens.size());
 	file.close();
 
 	return input;
+}
+
+
+void Board::draw(int pixels)
+{
+	Image ppm(pixels, "tal.ppm");
+	ppm.createPPM(_board, _boardSize);
 }
