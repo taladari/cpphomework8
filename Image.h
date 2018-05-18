@@ -1,9 +1,11 @@
 #pragma once
+#define _CRT_SECURE_NO_WARNINGS
 
 #include <iostream>
 #include <fstream>
 #include <string>
 #include <vector>
+#include <time.h>
 #include "Token.h"
 
 
@@ -19,13 +21,13 @@ public:
 class Image {
 private:
 	int dim;
-	string fileName;
 	RGB* colors;
 	void drawX(int row, int col, int cellSize);
 	void drawO(int row, int col, int cellSize);
-	void savePPMFile();
+	void drawTable(int row, int col, int cellSize);
+	void savePPMFile(string fName);
 
 public:
 	Image(int dim, string fileName);
-	void createPPM(vector<Token> board, int boardSize);
+	string createPPM(vector<Token> board, int boardSize);
 };

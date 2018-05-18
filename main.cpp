@@ -3,22 +3,22 @@
 
 #include "Champion.h"
 
-void printResults(const TicTacToe& game) {
-	cout << endl << "The final board is " << endl << game.board();
-	cout << "And the winner is " << game.winner().name()
-		<< ", playing as " << game.winner().getChar() << "!" << endl;
-}
-
-void playAndPrintResults(TicTacToe& game, Player& xPlayer, Player& oPlayer) {
-	game.play(xPlayer, oPlayer);
-	printResults(game);
-}
-
-void playAndPrintWinner(TicTacToe& game, Player& xPlayer, Player& oPlayer) {
-	game.play(xPlayer, oPlayer);
-	cout << "The winner is " << game.winner().name()
-		<< ", playing as " << game.winner().getChar() << "!" << endl;
-}
+//void printResults(const TicTacToe& game) {
+//	cout << endl << "The final board is " << endl << game.board();
+//	cout << "And the winner is " << game.winner().name()
+//		<< ", playing as " << game.winner().getChar() << "!" << endl;
+//}
+//
+//void playAndPrintResults(TicTacToe& game, Player& xPlayer, Player& oPlayer) {
+//	game.play(xPlayer, oPlayer);
+//	printResults(game);
+//}
+//
+//void playAndPrintWinner(TicTacToe& game, Player& xPlayer, Player& oPlayer) {
+//	game.play(xPlayer, oPlayer);
+//	cout << "The winner is " << game.winner().name()
+//		<< ", playing as " << game.winner().getChar() << "!" << endl;
+//}
 
 
 int main() {
@@ -26,7 +26,8 @@ int main() {
 	Board board;
 	cin >> board;
 	cout << board;
-	board.draw(600);
+	string name = board.draw(800);
+	cout << name << endl;
 
 	//TicTacToe game(4);       // Initializes a game on a 4x4 board
 	//XYPlayer player1;

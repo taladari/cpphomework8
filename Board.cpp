@@ -8,16 +8,6 @@ Board::Board(const Board & other) : _board(other._board), _boardSize(other._boar
 {
 }
 
-//char Board::operator[](Coordinate index) const
-//{
-//	int boardIndex = index.i * _boardSize + index.j;
-//	if (boardIndex < 0 || boardIndex >= _board.size())
-//	{
-//		throw IllegalCoordinateException(index.i, index.j);
-//	}
-//	return _board[index.i * _boardSize + index.j].getToken();
-//}
-
 Token & Board::operator[](const Coordinate index) 
 {
 	int boardIndex = index.i * _boardSize + index.j;
@@ -94,8 +84,8 @@ istream & operator >> (istream & input, Board & board)
 }
 
 
-void Board::draw(int pixels)
+string Board::draw(int pixels)
 {
 	Image ppm(pixels, "tal.ppm");
-	ppm.createPPM(_board, _boardSize);
+	return ppm.createPPM(_board, _boardSize);
 }

@@ -24,32 +24,9 @@ public:
 	Board & operator=(const char token);
 	const int size() const;
 	friend istream &operator >> (istream  &input, Board &board);
-	void draw(int pixels);
+	string draw(int pixels);
 
 private:
 	int _boardSize;
 	vector<Token> _board;
 };
-
-
-//template<typename T> class Wrapper
-//{
-//	T Object;
-//public:
-//	operator T&() { return Object; };
-//};
-//
-//class Class : public Wrapper<char>
-//{
-//public:
-//	char token;
-//	Class& operator =(char ch) {
-//		if (ch != 'O') {
-//			cout << "WRONG" << endl;
-//			return *this;
-//		}
-//		token = ch;
-//		return *this;
-//	}
-//	
-//};
