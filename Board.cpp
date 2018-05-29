@@ -61,25 +61,15 @@ ostream & operator<<(ostream & os, Board const & board)
 
 istream & operator >> (istream & input, Board & board)
 {
-	string fileName;
 	char curr;
 	vector<Token> tokens;
-	getline(input, fileName);
-
-	ifstream file(fileName);
-
-	while (file.get(curr))
-	{
-		Token t(curr);
-		if (t == 'X' || t == 'O' || t == '.')
-		{
-			tokens.push_back(t);
+	while (cin.get(curr)) {
+		if (curr != '\n') {
+			tokens.push_back(curr);
 		}
 	}
 	board = Board(tokens);
 	board._boardSize = (int)sqrt(tokens.size());
-	file.close();
-
 	return input;
 }
 
