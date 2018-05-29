@@ -12,6 +12,8 @@
 
 using namespace std;
 
+typedef unsigned char uint8_t;
+
 struct RGB {
 	uint8_t red, green, blue;
 public:
