@@ -8,8 +8,6 @@ Image::Image(int dim) : dim(dim)
 
 string Image::createPPM(vector<Token> board, int boardSize)
 {
-	srand(time(0));
-	string fName = "board" + to_string(rand()) + ".ppm";
 	int cellSize = dim / boardSize;
 	for (int i = 0; i < boardSize; i++)
 	{
@@ -28,8 +26,7 @@ string Image::createPPM(vector<Token> board, int boardSize)
 			}
 		}
 	}
-	savePPMFile(fName);
-	return fName;
+	return savePPMFile();
 }
 
 
@@ -100,12 +97,23 @@ void Image::drawO(int row, int col, int cellSize)
 	}	
 }
 
-void Image::savePPMFile(string fName)
+string Image::savePPMFile()
 {
-	ofstream imageFile(fName, ios::out | ios::binary);
+	srand(time(0));
+	string fileName = "board" + to_string(rand()) + ".ppm";
+	ifstream f(fileName.c_str());
+	int i = 0;
+	while (f.good()) {
+		fileName = "board" + to_string(rand()) + to_string(i) + ".ppm";
+		i++;
+		f.close();
+		f = ifstream(fileName.c_str());
+	}
+	ofstream imageFile(fileName, ios::out | ios::binary);
 	imageFile << "P6" << endl << dim << " " << dim << endl << 255 << endl;
 	imageFile.write(reinterpret_cast<char*>(colors), 3 * dim*dim);
 	imageFile.close();
+	return fileName;
 }
 
 Image::~Image()

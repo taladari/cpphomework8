@@ -28,7 +28,7 @@ private:
 	void drawX(int row, int col, int cellSize);
 	void drawO(int row, int col, int cellSize);
 	void drawBlank(int row, int col, int cellSize);
-	void savePPMFile(string fName);
+	string savePPMFile();
 
 public:
 	Image(int dim);
