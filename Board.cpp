@@ -64,7 +64,7 @@ istream & operator >> (istream & input, Board & board)
 	char curr;
 	vector<Token> tokens;
 	while (cin.get(curr)) {
-		if (curr != '\n') {
+		if (curr != '\n' && curr != '\r') {
 			tokens.push_back(curr);
 		}
 	}
