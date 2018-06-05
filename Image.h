@@ -32,5 +32,6 @@ private:
 
 public:
 	Image(int dim);
+	~Image();
 	string createPPM(vector<Token> board, int boardSize);
 };

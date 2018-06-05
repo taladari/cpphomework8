@@ -107,3 +107,8 @@ void Image::savePPMFile(string fName)
 	imageFile.write(reinterpret_cast<char*>(colors), 3 * dim*dim);
 	imageFile.close();
 }
+
+Image::~Image()
+{
+	delete[] colors;
+}
